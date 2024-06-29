@@ -1,0 +1,31 @@
+BEGIN
+    DECLARE integer num1, num2, num3
+
+    // Prompt user for input
+    PRINT "Enter three numbers:"
+    PRINT "First Number: "
+    READ num1
+    PRINT "Second Number: "
+    READ num2
+    PRINT "Third Number: "
+    READ num3
+
+    // Dynamically allocate memory for each value
+    DECLARE POINTER ptr1, ptr2, ptr3
+    ptr1 = NEW integer with value num1
+    ptr2 = NEW integer with value num2
+    ptr3 = NEW integer with value num3
+
+    // Display the contents of the pointers
+    PRINT "Contents of pointers:"
+    PRINT "*ptr1 = ", DEREFERENCE ptr1, " (address: ", ptr1, ")"
+    PRINT "*ptr2 = ", DEREFERENCE ptr2, " (address: ", ptr2, ")"
+    PRINT "*ptr3 = ", DEREFERENCE ptr3, " (address: ", ptr3, ")"
+
+    // Free dynamically allocated memory
+    DELETE ptr1
+    DELETE ptr2
+    DELETE ptr3
+
+    RETURN 0
+END
